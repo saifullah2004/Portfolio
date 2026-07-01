@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --primary-light: rgba(99, 102, 241, 0.12);
+  --accent-green: #10b981;
+  --accent-blue: #3b82f6;
+  --accent-purple: #8b5cf6;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Reusable component classes */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 56px;
+  height: 4px;
+  border-radius: 9999px;
+  background: var(--primary);
+}
+
+.card {
+  border-radius: 1rem;
+  border-width: 1px;
+  padding: 1.5rem;
+  transition: all 0.3s;
+  backdrop-filter: blur(8px);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  color: white;
+  background: var(--primary);
+  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  border-width: 1px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.nav-pill {
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-pill:hover {
+  color: #818cf8;
+}
+
+/* Float animation for hero image */
+@keyframes float {
+  0%   { transform: translateY(0px) rotate(3deg); }
+  50%  { transform: translateY(-12px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(3deg); }
+}
+
+.hero-img-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Shimmer gradient border for featured card */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer-border {
+  background: linear-gradient(90deg, var(--primary), var(--accent-purple), var(--accent-blue), var(--primary));
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
