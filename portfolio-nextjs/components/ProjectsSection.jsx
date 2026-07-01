@@ -103,7 +103,7 @@ export default function ProjectsSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
+        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6"
       >
         {projects.map((project) => (
           <motion.article
